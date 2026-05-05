@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import ast; ast.parse\\(open\\('app/main.py'\\).read\\(\\)\\); ast.parse\\(open\\('app/services/recipe_service.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(python seed_db.py)",
+      "Bash(python -c \"import sys; print\\('Python:', sys.executable\\); print\\('Version:', sys.version\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -X utf8 seed_db.py)",
+      "Bash(curl -s \"https://unsplash.com/napi/search/photos?query=biryani&per_page=5\")",
+      "Bash(curl -s -H \"User-Agent: Mozilla/5.0\" \"https://unsplash.com/napi/search/photos?query=biryani&per_page=5\")",
+      "Bash(python -X utf8 /tmp/all.py)",
+      "Bash(curl -sI \"https://loremflickr.com/800/600/chicken,curry,food?lock=12345\")",
+      "Bash(curl -sI 'https://loremflickr.com/800/600/__TRACKED_VAR__?lock=42')",
+      "Bash(curl -sI 'https://loremflickr.com/800/600/__TRACKED_VAR__?lock=7')",
+      "Bash(curl -sI 'https://loremflickr.com/800/600/__TRACKED_VAR__?lock=__TRACKED_VAR__')",
+      "Bash(python -c ' *)",
+      "Bash(./venv/Scripts/python.exe *)",
+      "Bash(curl -sIL \"https://loremflickr.com/800/600/potato,fry,food?lock=4208590006\")",
+      "Bash(curl -sIL \"https://loremflickr.com/800/600/onion,chutney,food?lock=560383722\")",
+      "Bash(curl -sI 'https://loremflickr.com/800/600/chicken,fry,food?lock=__TRACKED_VAR__')"
+    ]
+  }
+}
