@@ -1,0 +1,28 @@
+INSTALLATION INSTRUCTION:
+
+Prerequisites: 
+Install Python 3.11, MongoDB 6 (or use a free Atlas cluster), and Git. On Windows, install via the official MSI installers; on Ubuntu, use apt and the snap store.
+
+Clone Repository:
+ git clone https://github.com/your-username/recipe-recommender.git cd recipe-recommender
+
+Install Backend Dependencies:
+python -m venv .venv 
+venv\Scripts\activate on Windows 
+pip install -r requirements.txt
+
+Install Android Dependencies:
+ Open the AIRecipeApp folder in Android Studio Hedgehog or newer, allow Gradle to sync, and accept any SDK license prompts. The Compose preview should render once the sync completes.
+
+Setup Database:
+ mongosh "$MONGO_URI" --file scripts/init_recipes.js
+# imports ~3,000 recipes and creates indices on ingredient names
+
+Run Application (Local Development):
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 
+# in Android Studio,open "AIRecipeApp" press Run on the AIRecipeApp module.
+
+ngrok setup:
+login and install ngrok from its official site
+copy paste the private token after the login from site to ngrok
+run this cmd inside ngrok folder "ngrok http 8000"
